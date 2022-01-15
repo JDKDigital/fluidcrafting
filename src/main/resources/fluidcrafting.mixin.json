@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "package": "cy.jdkdigital.fluidcrafting.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "client": [
+        "MixinAbstractFurnaceBlockEntity"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "refmap": "fluidcrafting.refmap.json",
+    "minVersion": "0.8"
+}

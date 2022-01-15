@@ -1,0 +1,38 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "tag": "forge:vegetables/kale"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 100
+        },
+        {
+            "tag": "forge:fruits/mangos"
+        },
+        {
+            "tag": "forge:yoghurts"
+        },
+        {
+            "tag": "forge:vegetables/tomatoes"
+        }
+    ],
+    "result": {
+        "item": "croptopia:kale_smoothie",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

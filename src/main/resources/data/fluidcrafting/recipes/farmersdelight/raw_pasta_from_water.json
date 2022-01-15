@@ -1,0 +1,32 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 1000
+        },
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "item": "minecraft:wheat"
+        }
+    ],
+    "result": {
+        "item": "farmersdelight:raw_pasta",
+        "count": 2
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ]
+}

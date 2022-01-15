@@ -1,0 +1,32 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "tag": "forge:crops/paprika"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 100
+        },
+        {
+            "item": "minecraft:pumpkin"
+        },
+        {
+            "item": "croptopia:coffee"
+        }
+    ],
+    "result": {
+        "item": "croptopia:pumpkin_spice_latte",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

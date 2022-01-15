@@ -1,0 +1,29 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "croptopia:cooking_pot"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 250
+        },
+        {
+            "tag": "forge:salts"
+        },
+        {
+            "tag": "forge:flour"
+        }
+    ],
+    "result": {
+        "item": "croptopia:noodle",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

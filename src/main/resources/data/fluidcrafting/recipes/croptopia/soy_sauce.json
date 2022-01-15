@@ -1,0 +1,26 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "croptopia:food_press"
+        },
+        {
+            "tag": "forge:vegetables/soybeans"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 250
+        }
+    ],
+    "result": {
+        "item": "croptopia:soy_sauce",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "456",
+        "123"
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:egg"
+        },
+        "2": {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 250
+        },
+        "3": {
+            "item": "croptopia:whipping_cream"
+        },
+        "4": {
+            "tag": "forge:fruits/dates"
+        },
+        "5": {
+            "tag": "forge:fruits/figs"
+        },
+        "6": {
+            "item": "minecraft:sugar"
+        }
+    },
+    "result": {
+        "item": "croptopia:figgy_pudding",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

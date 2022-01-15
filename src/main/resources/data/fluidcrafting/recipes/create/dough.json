@@ -1,0 +1,22 @@
+{
+  "type": "fluidcrafting:shapeless",
+  "ingredients": [
+    {
+      "item": "create:wheat_flour"
+    },
+    {
+      "type": "fluidcrafting:fluid_container",
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "result": {
+    "item": "create:dough"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

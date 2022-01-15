@@ -1,0 +1,18 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 1000
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:lava",
+            "amount": 1000
+        }
+    ],
+    "result": {
+        "item": "minecraft:obsidian"
+    }
+}

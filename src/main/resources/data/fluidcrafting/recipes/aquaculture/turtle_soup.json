@@ -1,0 +1,25 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "tag": "aquaculture:turtle"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 1000
+        },
+        {
+            "item": "minecraft:bowl"
+        }
+    ],
+    "result": {
+        "item": "aquaculture:turtle_soup"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "aquaculture"
+        }
+    ]
+}

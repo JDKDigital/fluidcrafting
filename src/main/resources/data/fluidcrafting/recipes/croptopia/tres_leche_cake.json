@@ -1,0 +1,38 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 100
+        },
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "tag": "forge:crops/vanilla"
+        },
+        {
+            "tag": "forge:rums"
+        },
+        {
+            "item": "croptopia:whipping_cream"
+        }
+    ],
+    "result": {
+        "item": "croptopia:tres_leche_cake",
+        "count": 2
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

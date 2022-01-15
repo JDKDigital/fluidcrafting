@@ -1,0 +1,33 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "234",
+        "111"
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:bread"
+        },
+        "2": {
+            "type": "fluidcrafting:fluid_container",
+            "tag": "forge:honey",
+            "amount": 250
+        },
+        "3": {
+            "tag": "forge:fruits/lemons"
+        },
+        "4": {
+            "item": "croptopia:whipping_cream"
+        }
+    },
+    "result": {
+        "item": "croptopia:treacle_tart",
+        "count": 3
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

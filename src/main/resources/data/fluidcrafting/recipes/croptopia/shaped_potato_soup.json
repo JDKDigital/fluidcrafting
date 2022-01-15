@@ -1,0 +1,37 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        " 1 ",
+        "234",
+        " 5 "
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:potato"
+        },
+        "2": {
+            "tag": "forge:flour"
+        },
+        "3": {
+            "tag": "forge:vegetables/greenonions"
+        },
+        "4": {
+            "item": "croptopia:bacon"
+        },
+        "5": {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 250
+        }
+    },
+    "result": {
+        "item": "croptopia:potato_soup",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

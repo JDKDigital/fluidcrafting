@@ -1,0 +1,27 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "FFF",
+        "BEB",
+        "CCC"
+    ],
+    "key": {
+        "F": {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 1000
+        },
+        "B": {
+            "item": "minecraft:sugar"
+        },
+        "C": {
+            "item": "minecraft:wheat"
+        },
+        "E": {
+            "item": "minecraft:egg"
+        }
+    },
+    "result": {
+        "item": "minecraft:cake"
+    }
+}

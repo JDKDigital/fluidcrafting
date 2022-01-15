@@ -1,0 +1,43 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:baked_potato"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 250
+        },
+        {
+            "item": "minecraft:baked_potato"
+        },
+        {
+            "tag": "forge:cooked_mutton"
+        },
+        {
+            "tag": "forge:cooked_mutton"
+        },
+        {
+            "tag": "forge:cooked_mutton"
+        },
+        {
+            "tag": "forge:crops/onion"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "tag": "forge:crops/onion"
+        }
+    ],
+    "result": {
+        "item": "farmersdelight:shepherds_pie_block"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ]
+}

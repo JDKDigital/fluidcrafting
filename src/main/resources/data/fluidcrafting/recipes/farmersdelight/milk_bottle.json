@@ -1,0 +1,29 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 1000
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "result": {
+        "item": "farmersdelight:milk_bottle",
+        "count": 3
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ]
+}

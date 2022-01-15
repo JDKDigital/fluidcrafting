@@ -1,0 +1,26 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "type": "fluidcrafting:fluid_container",
+            "tag": "forge:honey",
+            "amount": 250
+        },
+        {
+            "item": "minecraft:wheat"
+        },
+        {
+            "item": "minecraft:wheat"
+        }
+    ],
+    "result": {
+        "item": "farmersdelight:honey_cookie",
+        "count": 8
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ]
+}

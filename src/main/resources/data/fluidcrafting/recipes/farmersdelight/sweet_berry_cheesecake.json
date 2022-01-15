@@ -1,0 +1,30 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "sss",
+        "sss",
+        "mOm"
+    ],
+    "key": {
+        "s": {
+            "item": "minecraft:sweet_berries"
+        },
+        "m": {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 250
+        },
+        "O": {
+            "item": "farmersdelight:pie_crust"
+        }
+    },
+    "result": {
+        "item": "farmersdelight:sweet_berry_cheesecake"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ]
+}

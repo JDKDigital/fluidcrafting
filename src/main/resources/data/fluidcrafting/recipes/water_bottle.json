@@ -1,0 +1,16 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 250
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "result": {
+        "item": "minecraft:potion"
+    }
+}

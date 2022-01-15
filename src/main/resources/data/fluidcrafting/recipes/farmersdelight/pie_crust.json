@@ -1,0 +1,26 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "wMw",
+        " w "
+    ],
+    "key": {
+        "w": {
+            "item": "minecraft:wheat"
+        },
+        "M": {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 250
+        }
+    },
+    "result": {
+        "item": "farmersdelight:pie_crust"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ]
+}

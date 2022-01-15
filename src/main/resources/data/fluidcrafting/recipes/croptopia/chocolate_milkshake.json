@@ -1,0 +1,29 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "tag": "forge:chocolates"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 100
+        },
+        {
+            "item": "croptopia:vanilla_ice_cream"
+        }
+    ],
+    "result": {
+        "item": "croptopia:chocolate_milkshake",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

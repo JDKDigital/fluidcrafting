@@ -1,0 +1,30 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "type": "fluidcrafting:fluid_container",
+            "tag": "forge:honey",
+            "amount": 1000
+        },
+        {
+            "item": "the_bumblezone:pollen_puff"
+        }
+    ],
+    "result": {
+        "item": "the_bumblezone:bee_bread",
+        "count": 3
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "the_bumblezone"
+        },
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "productivebees:fluid_tag_empty",
+                "tag": "forge:honey"
+            }
+        }
+    ]
+}

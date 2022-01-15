@@ -1,0 +1,26 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "item": "croptopia:frying_pan"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 250
+        }
+    ],
+    "result": {
+        "item": "croptopia:tortilla",
+        "count": 2
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

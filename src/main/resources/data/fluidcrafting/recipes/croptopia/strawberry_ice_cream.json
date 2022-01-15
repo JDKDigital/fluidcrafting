@@ -1,0 +1,32 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "tag": "forge:fruits/strawberries"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 100
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "item": "croptopia:cooking_pot"
+        }
+    ],
+    "result": {
+        "item": "croptopia:strawberry_ice_cream",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:grains/rice"
+        },
+        {
+            "tag": "forge:nuts/almonds"
+        },
+        {
+            "tag": "forge:fruits/limes"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 250
+        },
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "item": "croptopia:cinnamon"
+        }
+    ],
+    "result": {
+        "item": "croptopia:horchata",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "fluidcrafting:smoking",
+    "ingredient": {
+        "type": "fluidcrafting:fluid_container",
+        "fluid": "minecraft:water",
+        "amount": 100
+    },
+    "result": "croptopia:salt",
+    "experience": 0.1,
+    "cookingtime": 800,
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

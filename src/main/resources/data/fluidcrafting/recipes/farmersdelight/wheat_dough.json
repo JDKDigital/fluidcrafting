@@ -1,0 +1,27 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "www",
+        " b "
+    ],
+    "key": {
+        "w": {
+            "item": "minecraft:wheat"
+        },
+        "b": {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 1000
+        }
+    },
+    "result": {
+        "item": "farmersdelight:wheat_dough",
+        "count": 3
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ]
+}

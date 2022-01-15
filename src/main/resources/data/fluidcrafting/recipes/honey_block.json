@@ -1,0 +1,22 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "type": "fluidcrafting:fluid_container",
+            "tag": "forge:honey",
+            "amount": 1000
+        }
+    ],
+    "result": {
+        "item": "minecraft:honey_block"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "productivebees:fluid_tag_empty",
+                "tag": "forge:honey"
+            }
+        }
+    ]
+}

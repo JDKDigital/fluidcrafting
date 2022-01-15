@@ -1,0 +1,43 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        " 5 ",
+        "647",
+        "123"
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:egg"
+        },
+        "2": {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 100
+        },
+        "3": {
+            "tag": "forge:crops/vanilla"
+        },
+        "4": {
+            "tag": "forge:wines"
+        },
+        "5": {
+            "tag": "forge:fruits/strawberries"
+        },
+        "6": {
+            "item": "minecraft:bread"
+        },
+        "7": {
+            "tag": "forge:butters"
+        }
+    },
+    "result": {
+        "item": "croptopia:trifle",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

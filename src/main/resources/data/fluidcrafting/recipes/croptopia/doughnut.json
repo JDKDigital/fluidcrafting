@@ -1,0 +1,29 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:flour"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 100
+        },
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "tag": "forge:flour"
+        }
+    ],
+    "result": {
+        "item": "croptopia:doughnut",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

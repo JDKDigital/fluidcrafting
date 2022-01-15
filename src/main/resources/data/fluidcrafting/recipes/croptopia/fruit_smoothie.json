@@ -1,0 +1,35 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "tag": "forge:fruits"
+        },
+        {
+            "item": "minecraft:ice"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 100
+        }
+    ],
+    "result": {
+        "item": "croptopia:fruit_smoothie",
+        "count": 2
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

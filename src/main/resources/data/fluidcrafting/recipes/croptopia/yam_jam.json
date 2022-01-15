@@ -1,0 +1,26 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:vegetables/yams"
+        },
+        {
+            "tag": "forge:crops/vanilla"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 200
+        }
+    ],
+    "result": {
+        "item": "croptopia:yam_jam",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

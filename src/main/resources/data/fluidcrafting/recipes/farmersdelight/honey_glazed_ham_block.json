@@ -1,0 +1,43 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "tag": "forge:honey",
+            "amount": 250
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "farmersdelight:smoked_ham"
+        },
+        {
+            "item": "minecraft:sweet_berries"
+        },
+        {
+            "item": "farmersdelight:cooked_rice"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "farmersdelight:cooked_rice"
+        }
+    ],
+    "result": {
+        "item": "farmersdelight:honey_glazed_ham_block"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ]
+}

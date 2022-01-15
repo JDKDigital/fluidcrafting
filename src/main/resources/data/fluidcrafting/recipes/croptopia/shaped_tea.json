@@ -1,0 +1,28 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "   ",
+        " 2 ",
+        " 1 "
+    ],
+    "key": {
+        "1": {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 250
+        },
+        "2": {
+            "tag": "forge:tea_leaves"
+        }
+    },
+    "result": {
+        "item": "croptopia:tea",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:honeycomb"
+        },
+        {
+            "type": "fluidcrafting:fluid_container",
+            "tag": "forge:honey",
+            "amount": 250
+        }
+    ],
+    "result": {
+        "item": "productivebees:honey_treat"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "productivebees"
+        },
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "productivebees:fluid_tag_empty",
+                "tag": "forge:honey"
+            }
+        }
+    ]
+}

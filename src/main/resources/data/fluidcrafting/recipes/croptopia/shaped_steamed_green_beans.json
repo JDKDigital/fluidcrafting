@@ -1,0 +1,26 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "121"
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:vegetables/greenbeans"
+        },
+        "2": {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:water",
+            "amount": 250
+        }
+    },
+    "result": {
+        "item": "croptopia:steamed_green_beans",
+        "count": 2
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

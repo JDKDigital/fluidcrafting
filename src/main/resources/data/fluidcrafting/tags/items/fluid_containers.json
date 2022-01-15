@@ -1,0 +1,45 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "portabletanks:basic_portable_tank",
+            "required": false
+        },
+        {
+            "id": "portabletanks:advanced_portable_tank",
+            "required": false
+        },
+        {
+            "id": "portabletanks:expert_portable_tank",
+            "required": false
+        },
+        {
+            "id": "portabletanks:ultimate_portable_tank",
+            "required": false
+        },
+        {
+            "id": "mod_grinding_utils:tank",
+            "required": false
+        },
+        {
+            "id": "mod_grinding_utils:jumbo_tank",
+            "required": false
+        },
+        {
+            "id": "dimstorage:dimensional_tank",
+            "required": false
+        },
+        {
+            "id": "rftoolsutility:tank",
+            "required": false
+        },
+        {
+            "id": "endertanks:ender_tank",
+            "required": false
+        },
+        {
+            "id": "cyclic:tank",
+            "required": false
+        }
+    ]
+}

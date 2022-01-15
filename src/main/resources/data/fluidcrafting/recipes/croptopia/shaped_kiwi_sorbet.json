@@ -1,0 +1,27 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "1",
+        "2"
+    ],
+    "key": {
+        "1": {
+            "tag": "forge:fruits/kiwis"
+        },
+        "2": {
+            "type": "fluidcrafting:fluid_container",
+            "tag": "forge:honey",
+            "amount": 250
+        }
+    },
+    "result": {
+        "item": "croptopia:kiwi_sorbet",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}

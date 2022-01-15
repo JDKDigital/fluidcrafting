@@ -1,0 +1,26 @@
+{
+    "type": "fluidcrafting:shapeless",
+    "ingredients": [
+        {
+            "type": "fluidcrafting:fluid_container",
+            "fluid": "minecraft:milk",
+            "amount": 100
+        },
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "tag": "forge:crops/vanilla"
+        }
+    ],
+    "result": {
+        "item": "croptopia:whipping_cream",
+        "count": 4
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "croptopia"
+        }
+    ]
+}
