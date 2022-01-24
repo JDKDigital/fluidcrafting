@@ -3,7 +3,7 @@
     "pattern": [
         "sss",
         "sss",
-        "mOm"
+        "mO "
     ],
     "key": {
         "s": {
@@ -12,7 +12,7 @@
         "m": {
             "type": "fluidcrafting:fluid_container",
             "fluid": "minecraft:milk",
-            "amount": 250
+            "amount": 500
         },
         "O": {
             "item": "farmersdelight:pie_crust"

@@ -11,6 +11,7 @@
         }
     ],
     "result": {
-        "item": "minecraft:potion"
+        "item": "minecraft:potion",
+        "nbt": "{\"Potion\": \"minecraft:water\"}"
     }
 }
