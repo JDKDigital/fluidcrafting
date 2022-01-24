@@ -1,39 +1,40 @@
 package cy.jdkdigital.fluidcrafting.mixin;
 
 import cy.jdkdigital.fluidcrafting.common.crafting.FluidContainerIngredient;
-import net.minecraft.core.NonNullList;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tileentity.AbstractFurnaceTileEntity;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import javax.annotation.Nullable;
 
-@Mixin(value = AbstractFurnaceBlockEntity.class)
+@Mixin(value = AbstractFurnaceTileEntity.class)
 public class MixinAbstractFurnaceBlockEntity
 {
+    @Shadow
+    protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
+
     @Inject(
-        at = {@At("RETURN")},
-        method = {"burn(Lnet/minecraft/world/item/crafting/Recipe;Lnet/minecraft/core/NonNullList;I)Z"}
+        at = {@At("TAIL")},
+        method = {"burn(Lnet/minecraft/item/crafting/IRecipe;)V"}
     )
-    public void retainFluidContainer(@Nullable Recipe<?> p_155027_, NonNullList<ItemStack> p_155028_, int p_155029_, CallbackInfoReturnable callbackInfo) {
-        if (callbackInfo.getReturnValueZ()) {
-            ItemStack item = p_155028_.get(0);
-            for (Ingredient ingredient: p_155027_.getIngredients()) {
-                if (ingredient instanceof FluidContainerIngredient fluidContainerIngredient && item.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).isPresent()) {
-                    // Check that the item has fluid and that it's the correct type and amount
-                    item.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).ifPresent(handler -> {
-                        handler.drain(fluidContainerIngredient.getAmount(), IFluidHandler.FluidAction.EXECUTE);
-                    });
-                    item.grow(1); // counter the shrink called in vanilla handler
-                    p_155028_.set(0, item.copy());
-                }
+    public void retainFluidContainer(@Nullable IRecipe<?> p_214007_1_, CallbackInfo info) {
+        ItemStack item = this.items.get(0);
+        for (Ingredient ingredient: p_214007_1_.getIngredients()) {
+            if (ingredient instanceof FluidContainerIngredient && item.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).isPresent()) {
+                // Check that the item has fluid and that it's the correct type and amount
+                item.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).ifPresent(handler -> {
+                    handler.drain(((FluidContainerIngredient) ingredient).getAmount(), IFluidHandler.FluidAction.EXECUTE);
+                });
+                item.grow(1); // counter the shrink called in vanilla handler
             }
         }
     }

@@ -2,16 +2,17 @@ package cy.jdkdigital.fluidcrafting.common.crafting;
 
 import com.google.gson.JsonObject;
 import cy.jdkdigital.fluidcrafting.FluidCrafting;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.SerializationTags;
+import net.minecraft.fluid.FlowingFluid;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tags.ITag;
 import net.minecraft.tags.Tag;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.material.FlowingFluid;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Fluids;
+import net.minecraft.tags.TagCollectionManager;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.crafting.IIngredientSerializer;
 import net.minecraftforge.common.crafting.VanillaIngredientSerializer;
 import net.minecraftforge.common.util.LazyOptional;
@@ -56,7 +57,7 @@ public class FluidContainerIngredient extends Ingredient
             return false;
         }
 
-        for (Ingredient.Value value : values) {
+        for (Ingredient.IItemList value : values) {
             for (ItemStack stack : value.getItems()) {
                 return FluidUtil.getFluidHandler(stack).map(h -> inputFluid.getAmount() >= h.getFluidInTank(0).getAmount() && inputFluid.getFluid().isSame(h.getFluidInTank(0).getFluid())).orElse(false);
             }
@@ -84,7 +85,7 @@ public class FluidContainerIngredient extends Ingredient
             int amount = json.has("amount") ? json.get("amount").getAsInt() : 1000;
             if (json.has("tag")) {
                 String fluidId = json.get("tag").getAsString();
-                Tag<Fluid> tag = SerializationTags.getInstance().getOrEmpty(Registry.FLUID_REGISTRY).getTag(new ResourceLocation(fluidId));
+                ITag<Fluid> tag = TagCollectionManager.getInstance().getFluids().getTag(new ResourceLocation(fluidId));
                 return new FluidContainerIngredient(new FluidTagValue(tag, amount));
             } else {
                 String fluidId = json.get("fluid").getAsString();
@@ -115,9 +116,9 @@ public class FluidContainerIngredient extends Ingredient
 
         @Override
         public Collection<ItemStack> getItems() {
-            Tag<Item> tag = SerializationTags.getInstance().getOrEmpty(Registry.ITEM_REGISTRY).getTag(new ResourceLocation(FluidCrafting.MODID, "fluid_containers"));
+            ITag<Item> tag = TagCollectionManager.getInstance().getItems().getTag(new ResourceLocation(FluidCrafting.MODID, "fluid_containers"));
 
-            Ingredient.TagValue tanks = new Ingredient.TagValue(tag);
+            Ingredient.TagList tanks = new Ingredient.TagList(tag);
 
             Collection<ItemStack> items = tanks.getItems();
             for (ItemStack item : items) {
@@ -143,11 +144,11 @@ public class FluidContainerIngredient extends Ingredient
 
     public static class FluidTagValue implements FluidValue
     {
-        private final Tag<Fluid> tag;
+        private final ITag<Fluid> tag;
         private Collection<FluidStack> fluids;
         private int amount;
 
-        public FluidTagValue(Tag<Fluid> tag, int amount) {
+        public FluidTagValue(ITag<Fluid> tag, int amount) {
             this.tag = tag;
             this.amount = amount;
         }
@@ -159,9 +160,9 @@ public class FluidContainerIngredient extends Ingredient
 
         @Override
         public Collection<ItemStack> getItems() {
-            Tag<Item> tag = SerializationTags.getInstance().getOrEmpty(Registry.ITEM_REGISTRY).getTag(new ResourceLocation(FluidCrafting.MODID, "fluid_containers"));
+            ITag<Item> tag = TagCollectionManager.getInstance().getItems().getTag(new ResourceLocation(FluidCrafting.MODID, "fluid_containers"));
 
-            Ingredient.TagValue tanks = new Ingredient.TagValue(tag);
+            Ingredient.TagList tanks = new Ingredient.TagList(tag);
 
             Collection<ItemStack> items = tanks.getItems();
             for (FluidStack fluid : getFluids()) {
@@ -182,7 +183,7 @@ public class FluidContainerIngredient extends Ingredient
             if (fluids == null) {
                 if (tag != null) {
                     fluids = this.tag.getValues().stream().map((fluid) -> {
-                        return fluid instanceof FlowingFluid flowingFluid ? flowingFluid.getSource() : fluid;
+                        return fluid instanceof FlowingFluid ? ((FlowingFluid) fluid).getSource() : fluid;
                     }).distinct().map((fluid) -> {
                         return new FluidStack(fluid, this.getAmount());
                     }).collect(Collectors.toList());
@@ -194,15 +195,13 @@ public class FluidContainerIngredient extends Ingredient
         @Override
         public JsonObject serialize() {
             JsonObject jsonobject = new JsonObject();
-            jsonobject.addProperty("tag", SerializationTags.getInstance().getIdOrThrow(Registry.FLUID_REGISTRY, this.tag, () -> {
-                return new IllegalStateException("Unknown fluid tag");
-            }).toString());
+            jsonobject.addProperty("tag", TagCollectionManager.getInstance().getFluids().getIdOrThrow(this.tag).toString());
             jsonobject.addProperty("amount", this.getAmount());
             return jsonobject;
         }
     }
 
-    interface FluidValue extends Ingredient.Value
+    interface FluidValue extends Ingredient.IItemList
     {
         int getAmount();
     }

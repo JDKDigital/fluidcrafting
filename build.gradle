@@ -20,12 +20,11 @@ version = "${version}"
 group = 'cy.jdkdigital.fluidcrafting' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'fluidcrafting'
 
-// Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.18.1'
+    mappings channel: 'official', version: '1.16.5'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -88,13 +87,18 @@ dependencies {
     minecraft "net.minecraftforge:forge:${forgeversion}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    implementation fg.deobf("curse.maven:productivebees-377897:3598917")
-    implementation fg.deobf("curse.maven:jei-238222:3599262")
-    implementation fg.deobf("curse.maven:supermartijn642s-core-lib-454372:3596492")
-    implementation fg.deobf("curse.maven:supermartijn642s-config-lib-438332:3542143")
-    implementation fg.deobf("curse.maven:portable-tanks-503920:3598490")
-    implementation fg.deobf("curse.maven:croptopia-fabric-415438:3590394")
-    implementation fg.deobf("curse.maven:farmers-delight-398521:3590226")
+    implementation fg.deobf("curse.maven:productivebees-377897:3593653")
+    implementation fg.deobf("curse.maven:jei-238222:3607578")
+    implementation fg.deobf("curse.maven:supermartijn642s-core-lib-454372:3596490")
+    implementation fg.deobf("curse.maven:supermartijn642s-config-lib-438332:3413938")
+    implementation fg.deobf("curse.maven:portable-tanks-503920:3598488")
+    implementation fg.deobf("curse.maven:croptopia-fabric-415438:3369720")
+    implementation fg.deobf("curse.maven:farmers-delight-398521:3573686")
+    implementation fg.deobf("curse.maven:mekanism-268560:3590099")
+    implementation fg.deobf("curse.maven:cofh-core-69162:3621734")
+    implementation fg.deobf("curse.maven:thermal-foundation-222880:3621736")
+    implementation fg.deobf("curse.maven:thermal-expansion-69163:3607549")
+    implementation fg.deobf("curse.maven:thermal-innovation-291737:3556270")
 }
 
 mixin {
