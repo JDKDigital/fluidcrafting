@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 public class MixinAbstractFurnaceBlockEntity
 {
     @Shadow
-    protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
+    protected NonNullList<ItemStack> items;
 
     @Inject(
         at = {@At("TAIL")},
