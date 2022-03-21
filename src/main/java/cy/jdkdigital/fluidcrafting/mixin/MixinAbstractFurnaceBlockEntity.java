@@ -22,17 +22,17 @@ public class MixinAbstractFurnaceBlockEntity
         at = {@At("RETURN")},
         method = {"burn(Lnet/minecraft/world/item/crafting/Recipe;Lnet/minecraft/core/NonNullList;I)Z"}
     )
-    public void retainFluidContainer(@Nullable Recipe<?> p_155027_, NonNullList<ItemStack> p_155028_, int p_155029_, CallbackInfoReturnable callbackInfo) {
+    public void retainFluidContainer(@Nullable Recipe<?> recipe, NonNullList<ItemStack> stacks, int maxStackSize, CallbackInfoReturnable callbackInfo) {
         if (callbackInfo.getReturnValueZ()) {
-            ItemStack item = p_155028_.get(0);
-            for (Ingredient ingredient: p_155027_.getIngredients()) {
+            ItemStack item = stacks.get(0);
+            for (Ingredient ingredient: recipe.getIngredients()) {
                 if (ingredient instanceof FluidContainerIngredient fluidContainerIngredient && item.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).isPresent()) {
                     // Check that the item has fluid and that it's the correct type and amount
                     item.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).ifPresent(handler -> {
                         handler.drain(fluidContainerIngredient.getAmount(), IFluidHandler.FluidAction.EXECUTE);
                     });
                     item.grow(1); // counter the shrink called in vanilla handler
-                    p_155028_.set(0, item.copy());
+                    stacks.set(0, item.copy());
                 }
             }
         }

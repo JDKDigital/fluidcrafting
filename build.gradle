@@ -2,8 +2,8 @@ buildscript {
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
         maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
         maven { url = 'https://repo.spongepowered.org/maven' }
+        mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
@@ -25,7 +25,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.18.1'
+    mappings channel: 'official', version: '1.18.2'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -88,13 +88,14 @@ dependencies {
     minecraft "net.minecraftforge:forge:${forgeversion}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    implementation fg.deobf("curse.maven:productivebees-377897:3598917")
-    implementation fg.deobf("curse.maven:jei-238222:3599262")
-    implementation fg.deobf("curse.maven:supermartijn642s-core-lib-454372:3596492")
-    implementation fg.deobf("curse.maven:supermartijn642s-config-lib-438332:3542143")
+    implementation fg.deobf("curse.maven:jade-324717:3681449")
+    implementation fg.deobf("curse.maven:jei-238222:3698910")
+    implementation fg.deobf("curse.maven:productivebees-377897:3697505")
+    implementation fg.deobf("curse.maven:supermartijn642s-core-lib-454372:3542143")
+    implementation fg.deobf("curse.maven:supermartijn642s-config-lib-438332:3649270")
     implementation fg.deobf("curse.maven:portable-tanks-503920:3598490")
-    implementation fg.deobf("curse.maven:croptopia-fabric-415438:3590394")
-    implementation fg.deobf("curse.maven:farmers-delight-398521:3590226")
+//    implementation fg.deobf("curse.maven:croptopia-fabric-415438:3656496")
+//    implementation fg.deobf("curse.maven:farmers-delight-398521:3590226")
 }
 
 mixin {
