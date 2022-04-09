@@ -1,0 +1,19 @@
+{
+    "type": "fluidcrafting:shaped",
+    "pattern": [
+        "CGC",
+        "CGC",
+        " C "
+    ],
+    "key": {
+        "G": {
+            "tag": "forge:glass"
+        },
+        "C": {
+            "tag": "forge:ingots/copper"
+        }
+    },
+    "result": {
+        "item": "fluidcrafting:thermos"
+    }
+}

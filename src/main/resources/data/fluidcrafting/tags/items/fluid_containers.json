@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
+        "fluidcrafting:thermos",
         {
             "id": "portabletanks:basic_portable_tank",
             "required": false

@@ -28,6 +28,7 @@ import java.util.stream.Stream;
 
 public class FluidContainerIngredient extends Ingredient
 {
+    public static ResourceLocation TYPE = new ResourceLocation(FluidCrafting.MODID, "fluid_container");
     private int amount;
 
     protected FluidContainerIngredient(FluidValue value) {
@@ -51,11 +52,6 @@ public class FluidContainerIngredient extends Ingredient
         }
 
         FluidStack inputFluid = cap.map(h -> h.getFluidInTank(0)).orElse(FluidStack.EMPTY);
-
-        if (inputFluid.equals(FluidStack.EMPTY)) {
-            return false;
-        }
-
         for (Ingredient.Value value : values) {
             for (ItemStack stack : value.getItems()) {
                 return FluidUtil.getFluidHandler(stack).map(h -> inputFluid.getAmount() >= h.getFluidInTank(0).getAmount() && inputFluid.getFluid().isSame(h.getFluidInTank(0).getFluid())).orElse(false);
@@ -86,7 +82,7 @@ public class FluidContainerIngredient extends Ingredient
                 String fluidId = json.get("tag").getAsString();
                 Tag<Fluid> tag = SerializationTags.getInstance().getOrEmpty(Registry.FLUID_REGISTRY).getTag(new ResourceLocation(fluidId));
                 return new FluidContainerIngredient(new FluidTagValue(tag, amount));
-            } else {
+            } else if (json.has("fluid")) {
                 String fluidId = json.get("fluid").getAsString();
                 ResourceLocation id = new ResourceLocation(fluidId);
                 Fluid fluid = Fluids.WATER;
@@ -96,6 +92,8 @@ public class FluidContainerIngredient extends Ingredient
                     FluidCrafting.LOGGER.warn("Fluid with id " + id + " does not exist. Unable to parse recipe ingredient.");
                 }
                 return new FluidContainerIngredient(new FluidStackValue(new FluidStack(fluid, amount)));
+            } else {
+                return new FluidContainerIngredient(new FluidStackValue(FluidStack.EMPTY));
             }
         }
     }

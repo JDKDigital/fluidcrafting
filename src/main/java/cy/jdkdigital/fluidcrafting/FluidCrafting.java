@@ -2,8 +2,8 @@ package cy.jdkdigital.fluidcrafting;
 
 import cy.jdkdigital.fluidcrafting.common.crafting.FluidContainerIngredient;
 import cy.jdkdigital.fluidcrafting.common.crafting.conditions.FluidTagEmptyCondition;
+import cy.jdkdigital.fluidcrafting.init.ModItems;
 import cy.jdkdigital.fluidcrafting.init.ModRecipeTypes;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.crafting.CraftingHelper;
@@ -26,8 +26,7 @@ public class FluidCrafting
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-//        ModItems.ITEMS.register(modEventBus);
-//        ModBlocks.BLOCKS.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
         ModRecipeTypes.RECIPE_SERIALIZERS.register(modEventBus);
 
         modEventBus.addGenericListener(RecipeSerializer.class, this::registerRecipeSerializers);
@@ -42,6 +41,6 @@ public class FluidCrafting
     }
 
     public void registerRecipeSerializers(RegistryEvent.Register<RecipeSerializer<?>> event) {
-        CraftingHelper.register(new ResourceLocation(MODID, "fluid_container"), FluidContainerIngredient.Serializer.INSTANCE);
+        CraftingHelper.register(FluidContainerIngredient.TYPE, FluidContainerIngredient.Serializer.INSTANCE);
     }
 }

@@ -1,0 +1,5 @@
+{
+    "item.fluidcrafting.thermos": "Thermos [WIP]",
+    "fluidcrafting.thermos.info.capacity": "Capacity: %s",
+    "fluidcrafting.thermos.info.stored": "Stored: %s %s/%s"
+}

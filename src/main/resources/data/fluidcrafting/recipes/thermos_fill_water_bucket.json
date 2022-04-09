@@ -1,0 +1,17 @@
+{
+  "type": "fluidcrafting:shapeless",
+  "ingredients": [
+    {
+      "item": "fluidcrafting:thermos"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "type": "fluidcrafting:fluid_container",
+    "item": "fluidcrafting:thermos",
+    "fluid": "minecraft:water",
+    "amount": 1000
+  }
+}
